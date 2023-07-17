@@ -1,0 +1,7 @@
+C:\Users\Cliente\Desktop\Cadastro_Cliente\Cadastro_De_Clientes\CadastroBasicoDeClientes\CadastroBasicoDeClientes\bin\Debug\CadastroBasicoDeClientes.exe.config
+C:\Users\Cliente\Desktop\Cadastro_Cliente\Cadastro_De_Clientes\CadastroBasicoDeClientes\CadastroBasicoDeClientes\bin\Debug\CadastroBasicoDeClientes.exe
+C:\Users\Cliente\Desktop\Cadastro_Cliente\Cadastro_De_Clientes\CadastroBasicoDeClientes\CadastroBasicoDeClientes\bin\Debug\CadastroBasicoDeClientes.pdb
+C:\Users\Cliente\Desktop\Cadastro_Cliente\Cadastro_De_Clientes\CadastroBasicoDeClientes\CadastroBasicoDeClientes\obj\Debug\CadastroBasicoDeClientes.csproj.AssemblyReference.cache
+C:\Users\Cliente\Desktop\Cadastro_Cliente\Cadastro_De_Clientes\CadastroBasicoDeClientes\CadastroBasicoDeClientes\obj\Debug\CadastroBasicoDeClientes.csproj.CoreCompileInputs.cache
+C:\Users\Cliente\Desktop\Cadastro_Cliente\Cadastro_De_Clientes\CadastroBasicoDeClientes\CadastroBasicoDeClientes\obj\Debug\CadastroBasicoDeClientes.exe
+C:\Users\Cliente\Desktop\Cadastro_Cliente\Cadastro_De_Clientes\CadastroBasicoDeClientes\CadastroBasicoDeClientes\obj\Debug\CadastroBasicoDeClientes.pdb
