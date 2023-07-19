@@ -12,6 +12,7 @@ namespace CadastroBasicoDeClientes
         static void Main(string[] args)
         {
             Contexto contexto = new Contexto();
+            var clienteDao = new ClienteDao();
 
             //==================================Cadastrar======================================
 
@@ -28,6 +29,8 @@ namespace CadastroBasicoDeClientes
 
             //Console.Write("Informe a data de nascimento do clinte: ");
             //string data = Console.ReadLine();
+
+            //clienteDao.Inserir(nome, email, uf, data);
 
             //string queryInsert = string.Format("Insert into Clientes (Nome, email, uf, DataNascimento) Values('{0}', '{1}', '{2}', '{3}')", nome, email, uf, data);
             //contexto.ExecutaComandoSemRetorno(queryInsert);
@@ -51,11 +54,9 @@ namespace CadastroBasicoDeClientes
             //string uf = Console.ReadLine();
 
             //Console.Write("Informe a data de nascimento do clinte: ");
-
             //string data = Console.ReadLine();
 
-            //string queryUpdate = string.Format("Update Clientes set Nome='{0}', Email='{1}', UF='{2}', DataNascimento='{3}' where CodCliente={4}", nome, email, uf, data, id);
-            //contexto.ExecutaComandoSemRetorno(queryUpdate);
+            //clienteDao.Alterar(id, nome, email, uf, data);            
 
 
             //==============================Excluir======================================
@@ -64,20 +65,22 @@ namespace CadastroBasicoDeClientes
 
             //Console.Write("Informe o Id desejado para exclusão do cliente: ");
             //int id = Convert.ToInt32(Console.ReadLine());
-            //string queryDelete = string.Format("Delete from Clientes where CodCliente = {0}", id);
-            //contexto.ExecutaComandoSemRetorno(queryDelete);
+            //clienteDao.Excluir(id);
 
 
             //===============================Listar todos os clientes=====================================
 
-            string strSelect = "Select * from Clientes";
-            SqlDataReader dados = contexto.ExecutaComandoComRetorno(strSelect);
+            //SqlDataReader dados = clienteDao.ListarTodos();
 
-            while (dados.Read())
+            //while (dados.Read())
+            //{
+            //    Console.WriteLine(string.Format(" CodCliente: {0}, Nome: {1}, Email: {2}, UF: {3}, DataNascimento: {4}", dados["CodCliente"], dados["Nome"], dados["Email"], dados["UF"], dados["DataNascimento"]));
+            //}
+            SqlDataReader listaClientes = clienteDao.ListarTodos();
+            foreach (var cliente in listaClientes)
             {
-                Console.WriteLine(string.Format(" CodCliente: {0}, Nome: {1}, Email: {2}, UF: {3}, DataNascimento: {4}", dados["CodCliente"], dados["Nome"], dados["Email"], dados["UF"], dados["DataNascimento"]));
+                Console.WriteLine(string.Format(" CodCliente: {0}, Nome: {1}, Email: {2}, UF: {3}, DataNascimento: {4}", listaClientes["CodCliente"], listaClientes["Nome"], listaClientes["Email"], listaClientes["UF"], listaClientes["DataNascimento"]));
             }
-
 
             Console.ReadKey();
         }
