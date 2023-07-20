@@ -1,9 +1,11 @@
-﻿using System;
+﻿using CadastroBasicoDeClientes.Dominio;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System;
+using CadastroBasicoDeClientes.Cliente_Dao;
 
 namespace CadastroBasicoDeClientes
 {
@@ -29,7 +31,7 @@ namespace CadastroBasicoDeClientes
             Console.Write("Informe a data de nascimento do clinte: ");
             string data = Console.ReadLine();
 
-            var cliente = new Cliente 
+            var cliente = new Cliente
             {
                 Nome = nome,
                 Email = email,
@@ -38,7 +40,7 @@ namespace CadastroBasicoDeClientes
             };
 
             //Para alteração, descomente a linha abaixo, digite o Id do cliente que deseja alterar
-            //cliente.Id = 11; 
+            //cliente.Id = 13; 
             clienteDao.Salvar(cliente); 
 
             //==============================Excluir======================================
@@ -50,7 +52,7 @@ namespace CadastroBasicoDeClientes
             //clienteDao.Excluir(id);
 
             //===============================Listar todos os clientes=====================================
-                        
+
             foreach (var cli in clienteDao.ListarTodos())
             {
                 Console.WriteLine(string.Format(" CodCliente: {0}, Nome: {1}, Email: {2}, UF: {3}, DataNascimento: {4}", cli.Id, cli.Nome, cli.Email, cli.UF, cli.DataNascimento));

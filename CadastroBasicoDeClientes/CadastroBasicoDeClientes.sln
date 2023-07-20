@@ -3,7 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.33801.447
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CadastroBasicoDeClientes", "CadastroBasicoDeClientes\CadastroBasicoDeClientes.csproj", "{F3AC6AA5-F881-4B24-8017-F4929AAFDC53}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CadastroBasicoDeClientes.UIDos", "CadastroBasicoDeClientes\CadastroBasicoDeClientes.UIDos.csproj", "{F3AC6AA5-F881-4B24-8017-F4929AAFDC53}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CadastroBasicoDeClientes.Repositorio", "CadastroBasicoDeClientes.Repositorio\CadastroBasicoDeClientes.Repositorio.csproj", "{38B8103A-5C23-47CC-8868-3D78037D4E89}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CadastroBasicoDeClientes.Dominio", "CadastroBasicoDeClientes.Dominio\CadastroBasicoDeClientes.Dominio.csproj", "{2347C2FE-1E53-4D74-9C5B-E01EF6B74B78}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CadastroBasicoDeClientes.Cliente_Dao", "CadastroBasicoDeClientes.ClienteDao\CadastroBasicoDeClientes.Cliente_Dao.csproj", "{DC4C07CC-3DB1-4AA8-BF43-635A240D4E60}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +21,18 @@ Global
 		{F3AC6AA5-F881-4B24-8017-F4929AAFDC53}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F3AC6AA5-F881-4B24-8017-F4929AAFDC53}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F3AC6AA5-F881-4B24-8017-F4929AAFDC53}.Release|Any CPU.Build.0 = Release|Any CPU
+		{38B8103A-5C23-47CC-8868-3D78037D4E89}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{38B8103A-5C23-47CC-8868-3D78037D4E89}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{38B8103A-5C23-47CC-8868-3D78037D4E89}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{38B8103A-5C23-47CC-8868-3D78037D4E89}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2347C2FE-1E53-4D74-9C5B-E01EF6B74B78}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2347C2FE-1E53-4D74-9C5B-E01EF6B74B78}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2347C2FE-1E53-4D74-9C5B-E01EF6B74B78}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2347C2FE-1E53-4D74-9C5B-E01EF6B74B78}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DC4C07CC-3DB1-4AA8-BF43-635A240D4E60}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC4C07CC-3DB1-4AA8-BF43-635A240D4E60}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DC4C07CC-3DB1-4AA8-BF43-635A240D4E60}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DC4C07CC-3DB1-4AA8-BF43-635A240D4E60}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

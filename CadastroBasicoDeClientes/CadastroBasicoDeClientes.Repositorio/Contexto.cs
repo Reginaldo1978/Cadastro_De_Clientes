@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CadastroBasicoDeClientes
+namespace CadastroBasicoDeClientes.Repositorio
 {
     public class Contexto : IDisposable
     {
@@ -19,21 +19,21 @@ namespace CadastroBasicoDeClientes
             minhaConexao.Open();
         }
 
-        public void ExecutaComandoSemRetorno(string strQuery) 
+        public void ExecutaComandoSemRetorno(string strQuery)
         {
             var cmdComando = new SqlCommand(strQuery, minhaConexao);
             cmdComando.ExecuteNonQuery();
         }
 
-        public SqlDataReader ExecutaComandoComRetorno(string strQuery) 
+        public SqlDataReader ExecutaComandoComRetorno(string strQuery)
         {
             var cmdComando = new SqlCommand(strQuery, minhaConexao);
             return cmdComando.ExecuteReader();
         }
-        
+
         public void Dispose()
         {
-            if (minhaConexao.State == ConnectionState.Open) 
+            if (minhaConexao.State == ConnectionState.Open)
             {
                 minhaConexao.Close();
             }

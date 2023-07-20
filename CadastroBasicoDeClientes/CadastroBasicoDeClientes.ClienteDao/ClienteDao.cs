@@ -1,11 +1,13 @@
-﻿using System;
+﻿using CadastroBasicoDeClientes.Dominio;
+using CadastroBasicoDeClientes.Repositorio;
+using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CadastroBasicoDeClientes
+namespace CadastroBasicoDeClientes.Cliente_Dao
 {
     public class ClienteDao
     {
@@ -16,25 +18,25 @@ namespace CadastroBasicoDeClientes
             contexto = new Contexto();
         }
 
-        private void Inserir(Cliente cliente) 
+        private void Inserir(Cliente cliente)
         {
             var strQuery = string.Format("Insert into Clientes(Nome, Email, UF, DataNascimento) values('{0}', '{1}', '{2}', '{3}')", cliente.Nome, cliente.Email, cliente.UF, cliente.DataNascimento);
             contexto.ExecutaComandoSemRetorno(strQuery);
         }
 
-        private void Alterar(Cliente cliente) 
+        private void Alterar(Cliente cliente)
         {
             var strQuery = string.Format("Update Clientes set Nome='{0}', Email='{1}', UF='{2}', DataNascimento='{3}' Where CodCliente={4}", cliente.Nome, cliente.Email, cliente.UF, cliente.DataNascimento, cliente.Id);
             contexto.ExecutaComandoSemRetorno(strQuery);
         }
 
-        public void Excluir(int id) 
+        public void Excluir(int id)
         {
             var strQuery = string.Format("Delete from Clientes where CodCliente={0}", id);
             contexto.ExecutaComandoSemRetorno(strQuery);
         }
 
-        public List<Cliente> ListarTodos() 
+        public List<Cliente> ListarTodos()
         {
             var listaDeClientes = new List<Cliente>();
             var strQuery = "Select * from Clientes";
@@ -55,7 +57,7 @@ namespace CadastroBasicoDeClientes
         }
 
         //Esse método insere ou altera, se na classe Program for passado um Id ele altera, se não ele insere
-        public void Salvar(Cliente cliente) 
+        public void Salvar(Cliente cliente)
         {
             if (cliente.Id > 0)
                 Alterar(cliente);

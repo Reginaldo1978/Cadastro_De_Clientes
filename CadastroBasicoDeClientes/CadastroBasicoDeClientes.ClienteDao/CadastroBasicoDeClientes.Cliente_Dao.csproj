@@ -4,17 +4,16 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{F3AC6AA5-F881-4B24-8017-F4929AAFDC53}</ProjectGuid>
-    <OutputType>Exe</OutputType>
-    <RootNamespace>CadastroBasicoDeClientes</RootNamespace>
-    <AssemblyName>CadastroBasicoDeClientes</AssemblyName>
+    <ProjectGuid>{DC4C07CC-3DB1-4AA8-BF43-635A240D4E60}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CadastroBasicoDeClientes.ClienteDao</RootNamespace>
+    <AssemblyName>CadastroBasicoDeClientes.ClienteDao</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -24,7 +23,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -34,7 +32,6 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
-    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -44,14 +41,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Cliente.cs" />
     <Compile Include="ClienteDao.cs" />
-    <Compile Include="Contexto.cs" />
-    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <ProjectReference Include="..\CadastroBasicoDeClientes.Dominio\CadastroBasicoDeClientes.Dominio.csproj">
+      <Project>{2347c2fe-1e53-4d74-9c5b-e01ef6b74b78}</Project>
+      <Name>CadastroBasicoDeClientes.Dominio</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CadastroBasicoDeClientes.Repositorio\CadastroBasicoDeClientes.Repositorio.csproj">
+      <Project>{38b8103a-5c23-47cc-8868-3d78037d4e89}</Project>
+      <Name>CadastroBasicoDeClientes.Repositorio</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
