@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CadastroBasicoDeClientes.Do
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CadastroBasicoDeClientes.Cliente_Dao", "CadastroBasicoDeClientes.ClienteDao\CadastroBasicoDeClientes.Cliente_Dao.csproj", "{DC4C07CC-3DB1-4AA8-BF43-635A240D4E60}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CadastroBasicoDeClientes.UI.Web", "CadastroBasicoDeClientes.UI.Web\CadastroBasicoDeClientes.UI.Web.csproj", "{812506D9-9B5F-4C77-B43C-FE1D6A8F3D35}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{DC4C07CC-3DB1-4AA8-BF43-635A240D4E60}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DC4C07CC-3DB1-4AA8-BF43-635A240D4E60}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DC4C07CC-3DB1-4AA8-BF43-635A240D4E60}.Release|Any CPU.Build.0 = Release|Any CPU
+		{812506D9-9B5F-4C77-B43C-FE1D6A8F3D35}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{812506D9-9B5F-4C77-B43C-FE1D6A8F3D35}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{812506D9-9B5F-4C77-B43C-FE1D6A8F3D35}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{812506D9-9B5F-4C77-B43C-FE1D6A8F3D35}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

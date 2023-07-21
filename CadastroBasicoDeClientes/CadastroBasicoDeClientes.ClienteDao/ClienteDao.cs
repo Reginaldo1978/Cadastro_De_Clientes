@@ -56,6 +56,25 @@ namespace CadastroBasicoDeClientes.Cliente_Dao
             return listaDeClientes;
         }
 
+        public Cliente ListarPorId(int id)
+        {
+            var cliente = new Cliente();
+            var strQuery = string.Format("Select * from Clientes where CodCliente = {0}", id);
+            SqlDataReader dados = contexto.ExecutaComandoComRetorno(strQuery);
+
+            dados.Read();
+            if (dados.HasRows)
+            {
+                cliente.Id = Convert.ToInt32(dados["CodCliente"]);
+                cliente.Nome = Convert.ToString(dados["Nome"]);
+                cliente.Email = Convert.ToString(dados["Email"]);
+                cliente.UF = Convert.ToString(dados["UF"]);
+                cliente.DataNascimento = Convert.ToDateTime(dados["DataNascimento"]);
+            }
+
+            return cliente;
+        }
+
         //Esse método insere ou altera, se na classe Program for passado um Id ele altera, se não ele insere
         public void Salvar(Cliente cliente)
         {
