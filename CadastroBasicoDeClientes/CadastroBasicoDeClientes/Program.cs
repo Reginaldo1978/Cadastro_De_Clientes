@@ -13,7 +13,7 @@ namespace CadastroBasicoDeClientes
     {
         static void Main(string[] args)
         {
-            var clienteDao = new ClienteDao();
+            var clienteDao = ClienteDaoConstrutor.ClienteDaoADO();
 
             //==================================Cadastrar======================================
 

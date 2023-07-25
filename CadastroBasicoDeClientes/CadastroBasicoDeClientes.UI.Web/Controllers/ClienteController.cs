@@ -6,9 +6,13 @@ namespace CadastroBasicoDeClientes.UI.Web.Controllers
 {
     public class ClienteController : Controller
     {
+        private readonly ClienteDao clienteDao;
+        public ClienteController()
+        {
+            clienteDao = ClienteDaoConstrutor.ClienteDaoEF();
+        }
         public ActionResult Index()
         {
-            var clienteDao = new ClienteDao();
             var listaDeClientes = clienteDao.ListarTodos();
             return View(listaDeClientes);
         }
@@ -24,7 +28,6 @@ namespace CadastroBasicoDeClientes.UI.Web.Controllers
         {
             if (ModelState.IsValid)
             {
-                var clienteDao = new ClienteDao();
                 clienteDao.Salvar(cliente);
                 return RedirectToAction("Index");
             }
@@ -32,9 +35,8 @@ namespace CadastroBasicoDeClientes.UI.Web.Controllers
             return View(cliente);
         }
 
-        public ActionResult Editar(int id)
+        public ActionResult Editar(string id)
         {
-            var clienteDao = new ClienteDao();
             var cliente = clienteDao.ListarPorId(id);
 
             if (cliente == null)
@@ -49,16 +51,14 @@ namespace CadastroBasicoDeClientes.UI.Web.Controllers
         {
             if (ModelState.IsValid)
             {
-                var clienteDao = new ClienteDao();
                 clienteDao.Salvar(cliente);
                 return RedirectToAction("Index");
             }
             return View(cliente);
         }
 
-        public ActionResult Detalhes(int id)
+        public ActionResult Detalhes(string id)
         {
-            var clienteDao = new ClienteDao();
             var cliente = clienteDao.ListarPorId(id);
 
             if (cliente == null)
@@ -67,22 +67,21 @@ namespace CadastroBasicoDeClientes.UI.Web.Controllers
             return View(cliente);
         }
 
-        public ActionResult Excluir(int id) 
+        public ActionResult Excluir(string id) 
         {
-            var clienteDao = new ClienteDao();
             var cliente = clienteDao.ListarPorId(id);
 
-            if (clienteDao == null)
+            if (cliente == null)
                 return HttpNotFound();
             return View(cliente);
         }
 
         [HttpPost, ActionName("Excluir")]
         [ValidateAntiForgeryToken]
-        public ActionResult ExcluirConfirmado(int id) 
+        public ActionResult ExcluirConfirmado(string id) 
         {
-            var clienteDao = new ClienteDao();
-            clienteDao.Excluir(id);
+            var cliente = clienteDao.ListarPorId(id);
+            clienteDao.Excluir(cliente);
             return RedirectToAction("Index");
         }
     }

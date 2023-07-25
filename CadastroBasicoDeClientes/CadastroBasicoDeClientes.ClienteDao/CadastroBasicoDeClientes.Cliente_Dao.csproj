@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ClienteDao.cs" />
+    <Compile Include="ClienteDaoConstrutor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -49,9 +50,13 @@
       <Project>{2347c2fe-1e53-4d74-9c5b-e01ef6b74b78}</Project>
       <Name>CadastroBasicoDeClientes.Dominio</Name>
     </ProjectReference>
-    <ProjectReference Include="..\CadastroBasicoDeClientes.Repositorio\CadastroBasicoDeClientes.Repositorio.csproj">
+    <ProjectReference Include="..\CadastroBasicoDeClientes.RepositorioEF\CadastroBasicoDeClientes.RepositorioEF.csproj">
+      <Project>{fa2e9f82-b502-41c2-b854-84f565d6310c}</Project>
+      <Name>CadastroBasicoDeClientes.RepositorioEF</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CadastroBasicoDeClientes.Repositorio\CadastroBasicoDeClientes.RepositorioADO.csproj">
       <Project>{38b8103a-5c23-47cc-8868-3d78037d4e89}</Project>
-      <Name>CadastroBasicoDeClientes.Repositorio</Name>
+      <Name>CadastroBasicoDeClientes.RepositorioADO</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -1,5 +1,7 @@
 ﻿using CadastroBasicoDeClientes.Dominio;
+using CadastroBasicoDeClientes.Dominio.Contrato;
 using CadastroBasicoDeClientes.Repositorio;
+using CadastroBasicoDeClientes.RepositorioADO;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
@@ -11,77 +13,30 @@ namespace CadastroBasicoDeClientes.Cliente_Dao
 {
     public class ClienteDao
     {
-        private Contexto contexto;
+        private readonly IRepositorio<Cliente> repositorio;
 
-        public ClienteDao()
+        public ClienteDao(IRepositorio<Cliente> repo)
         {
-            contexto = new Contexto();
+            repositorio = repo;
         }
-
-        private void Inserir(Cliente cliente)
-        {
-            var strQuery = string.Format("Insert into Clientes(Nome, Email, UF, DataNascimento) values('{0}', '{1}', '{2}', '{3}')", cliente.Nome, cliente.Email, cliente.UF, cliente.DataNascimento);
-            contexto.ExecutaComandoSemRetorno(strQuery);
-        }
-
-        private void Alterar(Cliente cliente)
-        {
-            var strQuery = string.Format("Update Clientes set Nome='{0}', Email='{1}', UF='{2}', DataNascimento='{3}' Where CodCliente={4}", cliente.Nome, cliente.Email, cliente.UF, cliente.DataNascimento, cliente.Id);
-            contexto.ExecutaComandoSemRetorno(strQuery);
-        }
-
-        public void Excluir(int id)
-        {
-            var strQuery = string.Format("Delete from Clientes where CodCliente={0}", id);
-            contexto.ExecutaComandoSemRetorno(strQuery);
-        }
-
-        public List<Cliente> ListarTodos()
-        {
-            var listaDeClientes = new List<Cliente>();
-            var strQuery = "Select * from Clientes";
-            SqlDataReader dados = contexto.ExecutaComandoComRetorno(strQuery);
-            while (dados.Read())
-            {
-                var cliente = new Cliente
-                {
-                    Id = Convert.ToInt32(dados["CodCliente"]),
-                    Nome = Convert.ToString(dados["Nome"]),
-                    Email = Convert.ToString(dados["Email"]),
-                    UF = Convert.ToString(dados["UF"]),
-                    DataNascimento = Convert.ToDateTime(dados["DataNascimento"])
-                };
-                listaDeClientes.Add(cliente);
-            }
-            return listaDeClientes;
-        }
-
-        public Cliente ListarPorId(int id)
-        {
-            var cliente = new Cliente();
-            var strQuery = string.Format("Select * from Clientes where CodCliente = {0}", id);
-            SqlDataReader dados = contexto.ExecutaComandoComRetorno(strQuery);
-
-            dados.Read();
-            if (dados.HasRows)
-            {
-                cliente.Id = Convert.ToInt32(dados["CodCliente"]);
-                cliente.Nome = Convert.ToString(dados["Nome"]);
-                cliente.Email = Convert.ToString(dados["Email"]);
-                cliente.UF = Convert.ToString(dados["UF"]);
-                cliente.DataNascimento = Convert.ToDateTime(dados["DataNascimento"]);
-            }
-
-            return cliente;
-        }
-
-        //Esse método insere ou altera, se na classe Program for passado um Id ele altera, se não ele insere
         public void Salvar(Cliente cliente)
         {
-            if (cliente.Id > 0)
-                Alterar(cliente);
-            else
-                Inserir(cliente);
+            repositorio.Salvar(cliente);
+        }
+
+        public void Excluir(Cliente  cliente)
+        {
+            repositorio.Excluir(cliente);
+        }
+
+        public IEnumerable<Cliente> ListarTodos()
+        {
+            return repositorio.ListarTodos();
+        }
+
+        public Cliente ListarPorId(string id)
+        {
+            return repositorio.ListarPorId(id);
         }
     }
 }

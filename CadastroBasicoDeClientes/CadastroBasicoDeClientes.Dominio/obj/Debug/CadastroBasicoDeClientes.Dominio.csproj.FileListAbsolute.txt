@@ -3,3 +3,4 @@ C:\Users\Cliente\Desktop\Cadastro_Cliente\Cadastro_De_Clientes\CadastroBasicoDeC
 C:\Users\Cliente\Desktop\Cadastro_Cliente\Cadastro_De_Clientes\CadastroBasicoDeClientes\CadastroBasicoDeClientes.Dominio\obj\Debug\CadastroBasicoDeClientes.Dominio.csproj.CoreCompileInputs.cache
 C:\Users\Cliente\Desktop\Cadastro_Cliente\Cadastro_De_Clientes\CadastroBasicoDeClientes\CadastroBasicoDeClientes.Dominio\obj\Debug\CadastroBasicoDeClientes.Dominio.dll
 C:\Users\Cliente\Desktop\Cadastro_Cliente\Cadastro_De_Clientes\CadastroBasicoDeClientes\CadastroBasicoDeClientes.Dominio\obj\Debug\CadastroBasicoDeClientes.Dominio.pdb
+C:\Users\Cliente\Desktop\Cadastro_Cliente\Cadastro_De_Clientes\CadastroBasicoDeClientes\CadastroBasicoDeClientes.Dominio\obj\Debug\CadastroBasicoDeClientes.Dominio.csproj.AssemblyReference.cache

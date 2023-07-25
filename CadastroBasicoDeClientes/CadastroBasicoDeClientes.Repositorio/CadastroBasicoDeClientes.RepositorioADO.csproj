@@ -42,8 +42,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ClienteDaoRepositorioADO.cs" />
     <Compile Include="Contexto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CadastroBasicoDeClientes.Dominio\CadastroBasicoDeClientes.Dominio.csproj">
+      <Project>{2347C2FE-1E53-4D74-9C5B-E01EF6B74B78}</Project>
+      <Name>CadastroBasicoDeClientes.Dominio</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
